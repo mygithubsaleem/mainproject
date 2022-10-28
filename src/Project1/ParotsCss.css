@@ -1,0 +1,26 @@
+p {
+	width: 48%;
+	/* width: 30%; */
+	height: 342px;
+	/* height: 250px; */
+	margin-left: 33%;
+	background-color: black;
+	display: flex;
+	background-repeat: no-repeat;
+}
+
+.pleft {
+	flex: 5%;
+	height: 324px;
+	background-color: rgb(0, 0, 0, 0.5);
+}
+
+.pcenter {
+	flex: 90%;
+	height: 324px;
+}
+.pright {
+	flex: 5%;
+	height: 324px;
+	background-color: rgb(0, 0, 0, 0 5);
+}

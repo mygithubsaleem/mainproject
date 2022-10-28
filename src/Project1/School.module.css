@@ -1,0 +1,255 @@
+.body {
+	background-color: yellow;
+}
+/* header items starts...*/
+.headerItems {
+	list-style-type: none;
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: lightskyblue;
+	border-radius: 45px;
+}
+.headerItems > li > .coursesbut:not(:last-child) {
+	margin-right: 110px;
+}
+.immage1 {
+	position: relative;
+	left: 20px;
+	width: 45px;
+	height: 45px;
+	border: 2px solid #73ad21;
+	margin-top: 2px;
+}
+.para1 {
+	width: 100%;
+	height: 20%;
+	margin-left: 50%;
+	margin-top: 3%;
+	color: blue;
+}
+
+li .coursesbut {
+	position: absolute;
+	color: firebrick;
+	right: 5px;
+	height: 30px;
+	border: 2px solid red;
+	border-radius: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 10px;
+	background-color: lightpink;
+}
+
+li .loginbut {
+	position: absolute;
+	color: firebrick;
+	right: 15px;
+	height: 30px;
+	border: 2px solid red;
+	border-radius: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 10px;
+	background-color: lightgreen;
+}
+.hideme {
+	display: none;
+	visibility: none;
+}
+.showme {
+	display: inline;
+	visibility: visible;
+}
+
+.searchBut {
+	position: absolute;
+	right: 20px;
+	padding-left: 20px;
+	width: 40p;
+	height: 40px;
+	padding-top: 8px;
+}
+/* Header code ends here.......*/
+
+/* Drop down navebar  code starts from here...*/
+.navbar {
+	position: sticky;
+	top: 0%;
+	width: 100%;
+	background-color: #333;
+	z-index: 99999;
+}
+
+.navbar a {
+	float: left;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 8px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+	background-color: red;
+}
+
+.dropdownContent {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdownContent a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdownContent a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdownContent {
+	display: block;
+}
+
+.menuItems {
+	list-style-type: none;
+	display: inline-block;
+	width: 100%;
+	margin-top: 50px;
+	padding: 0;
+	overflow: hidden;
+	background-color: lightgreen;
+	border-radius: 45px;
+}
+
+li {
+	float: left;
+}
+
+li a,
+.dropbtn {
+	color: solid blue;
+	text-align: center;
+	text-decoration: none;
+	border: red;
+}
+
+li a:hover,
+.dropdown:hover .dropbtn {
+	background-color: red;
+}
+
+li.dropdown {
+	display: block;
+}
+
+.dropdownContent {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdownContent a:hover {
+	background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdownContent {
+	display: block;
+}
+/* nave bar code ends here....*/
+
+/* column 1 code starts from  here....*/
+
+.col1 {
+	background-color: aqua;
+	width: 30%;
+	height: 400%;
+	padding-top: 10%;
+}
+.imageb {
+	width: 20%;
+	max-height: 100%;
+}
+/* column 2 code starts from  here....*/
+.col2 {
+	background-color: rgb(0, 128, 255);
+	width: 60%;
+	padding: 10px;
+}
+/*  column 3  code starts from  here....*/
+.col3 {
+	background-color: lightpink;
+	width: 20%;
+	height: 600px;
+	border: 40px;
+	padding: 10px;
+}
+/* footer code start from here....*/
+
+.socialContainer {
+	list-style-type: none;
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 0%;
+	background-color: lightgreen;
+	border-radius: 45px;
+	border: 3px solid red;
+	color: 2px red;
+	padding-top: 20px;
+}
+.youtubeSocial {
+	color: #eb3223;
+	margin-left: 20%;
+	padding-right: 40px;
+}
+
+.facebookSocial {
+	color: #4968ad;
+	padding-right: 40px;
+}
+
+.twitterSocial {
+	color: #49a1eb;
+	padding-right: 40px;
+}
+
+.instagramSocial {
+	color: black;
+}
+.fixed {
+	position: fixed;
+	bottom: 0%;
+	left: 0%;
+}
