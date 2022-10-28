@@ -36,12 +36,11 @@ const Home = (prosp) => {
 			<>
 				<Container>
 					<Offcanvas show={show} onHide={handleClose}>
-						<Offcanvas.Header closeButton></Offcanvas.Header>
+						<Offcanvas.Header closeButton>
+							<Offcanvas.Title></Offcanvas.Title>
+						</Offcanvas.Header>
 
-						<div
-							className="sidebar"
-							style={{ width: "20%", backgroundColor: "red" }}
-						>
+						<div className="sidebar">
 							<Link to="/Aboutus">
 								<Button className="block" type="button">
 									About Us
