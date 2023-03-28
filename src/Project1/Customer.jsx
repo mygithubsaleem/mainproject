@@ -1,5 +1,6 @@
 import React from "react";
 import { setItem, getItem } from "../helpers/dataHelpers";
+import customerStyles from "./Project1/"
 
 class Customer extends React.Component {
 	state = {
@@ -90,75 +91,69 @@ class Customer extends React.Component {
 		console.log("RENDER", users);
 		return (
 			<div>
-				<p>Customer Customer Page....</p>
-				<input
-					type="text"
-					value={currentInput}
-					onChange={(event) => {
-						this.setState({ currentInput: event.target.value });
-					}}
-				/>
-				<br />
-				<br />
-				<button
-					className="m-2"
-					variant="primary"
-					onClick={() => {
-						this.addCustomer();
-					}}
-				>
-					Add Customer
-				</button>
-				<br />
-				<br />
-				<button
-					className="m-2"
-					variant="warning"
-					onClick={() => {
-						this.clearStorage();
-					}}
-				>
-					Clear Local Storage
-				</button>
-
-				{this.state.selectedIndex && (
+				<Form>
+					{" "}
+					className={custStyles.cust_form}
+					<p>Customer Customer Page....</p>
+					<input
+						type="text"
+						value={currentInput}
+						onChange={(event) => {
+							this.setState({ currentInput: event.target.value });
+						}}
+					/>
+					<br />
+					<br />
 					<button
 						className="m-2"
-						variant="dark"
+						variant="primary"
 						onClick={() => {
-							this.updateUser();
+							this.addCustomer();
 						}}
 					>
-						Update Customer
+						Add Customer
 					</button>
-				)}
-
-				<br />
-				<br />
-				<br />
-				<ul>
-					{users.map((a, index) => (
-						<li key={index}>
-							<>
-								<span>{a.id}</span> <span>{a.name}</span>
-							</>
-							<button
-								onClick={() => this.deleteCustomer(a.id)}
-								variant="danger"
-								className="m-2"
-							>
-								Delete Item
-							</button>
-							<button
-								onClick={() => this.edditCustomer(a.id)}
-								variant="warning"
-								className="m-2"
-							>
-								Edit Item
-							</button>
-						</li>
-					))}
-				</ul>
+					<br />
+					<br />
+					<button
+						className="m-2"
+						variant="warning"
+						onClick={() => {
+							this.clearStorage();
+						}}
+					>
+						Clear Local Storage
+					</button>
+					{this.state.selectedIndex && (
+						<button
+							className="m-2"
+							variant="dark"
+							onClick={() => {
+								this.updateUser();
+							}}
+						>
+							Update Customer
+						</button>
+					)}
+					<br />
+					<br />
+					<br />
+					<ul>
+						{users.map((a, index) => (
+							<li key={index} className={custStyles.list_area}>
+								<>
+									<span>{a.id}</span> <span>{a.name}</span>
+								</>
+								<button onClick={() => this.deleteCustomer(a.id)} variant="danger" className="m-2">
+									Delete Item
+								</button>
+								<button onClick={() => this.edditCustomer(a.id)} variant="warning" className="m-2">
+									Edit Item
+								</button>
+							</li>
+						))}
+					</ul>
+				</Form>
 			</div>
 		);
 	}

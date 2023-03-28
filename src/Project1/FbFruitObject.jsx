@@ -1,21 +1,15 @@
-import { useState } from "react";
 import React from "react";
-//import styles from "./App.css";
-import styles from "./Fruits.module.css";
-
-import { Button, Table } from "react-bootstrap";
+import { useState } from "react";
+import fruuitstyles from "./Fruits.module.css";
+import { Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FbFruitObject = (props) => {
 	const [Fruits, setFruits] = useState([
 		{ name: "apple", quantity: "2", price: "200" },
 		{ name: "melon", quantity: "3", price: "100" },
 	]);
-	const [CurrentInput, setCurrentInput] = useState([
-		{ name: "", quantity: "", price: "" },
-	]);
+	const [CurrentInput, setCurrentInput] = useState([{ name: "", quantity: "", price: "" }]);
 	const [SellectedIndex, setSellectedIndex] = useState(null);
 
 	const addFruits = () => {
@@ -46,132 +40,144 @@ const FbFruitObject = (props) => {
 		setSellectedIndex(null);
 	};
 	return (
-		<div>
-			<br />
-			<div>
+		<div className={fruuitstyles.body}>
+			<Form>
 				<h1>
 					{" "}
-					<Link to="/">Home</Link>
+					<Link className={fruuitstyles.fruit_link} to="/">
+						Home
+					</Link>
 				</h1>
-			</div>
-			<br />
-
-			<h2 className={styles.heading1}>Shoping Cart-2</h2>
-			<br />
-			<div className={styles.inputArea}>
-				<label>Enter the fruit</label>
-
-				<input
-					style={{ marginLeft: "3%" }}
-					type="text"
-					value={CurrentInput.name}
-					onChange={(e) => {
-						setCurrentInput({
-							...CurrentInput,
-							name: e.target.value,
-						});
-					}}
-				></input>
 				<br />
-				<label>Enter the quantity</label>
 
-				<input
-					type="text"
-					style={{ marginLeft: "1%" }}
-					value={CurrentInput.quantity}
-					onChange={(e) => {
-						setCurrentInput({
-							...CurrentInput,
-							quantity: e.target.value,
-						});
-					}}
-				></input>
 				<br />
-				<label>Enter the price</label>
+				<div className={fruuitstyles.inputArea}>
+					<h2>Shoping Cart-2</h2>
 
-				<input
-					style={{ marginLeft: "2.6%" }}
-					type="text"
-					value={CurrentInput.price}
-					onChange={(e) => {
-						setCurrentInput({
-							...CurrentInput,
-							price: e.target.value,
-						});
-					}}
-				></input>
-			</div>
-			<br />
-			<div className={styles.inputArea}>
-				<Button
-					variant="success"
-					onClick={() => {
-						addFruits();
-					}}
-				>
-					Add Fruits
-				</Button>
-				<Button
-					variant="dark"
-					style={{ marginLeft: "12px" }}
-					onClick={() => {
-						clearData();
-					}}
-				>
-					Clear List
-				</Button>
+					<input
+						className={fruuitstyles.input_box}
+						type="text"
+						placeholder="Enter the Fruit"
+						value={CurrentInput.name}
+						onChange={(e) => {
+							setCurrentInput({
+								...CurrentInput,
+								name: e.target.value,
+							});
+						}}
+					></input>
+					<br />
 
-				{SellectedIndex !== null && (
+					<input
+						className={fruuitstyles.input_box}
+						type="text"
+						placeholder="Enter the quantity"
+						value={CurrentInput.quantity}
+						onChange={(e) => {
+							setCurrentInput({
+								...CurrentInput,
+								quantity: e.target.value,
+							});
+						}}
+					></input>
+					<br />
+
+					<input
+						className={fruuitstyles.input_box}
+						type="text"
+						placeholder="Enter the total price"
+						value={CurrentInput.price}
+						onChange={(e) => {
+							setCurrentInput({
+								...CurrentInput,
+								price: e.target.value,
+							});
+						}}
+					></input>
+					<br />
+					<br />
+
 					<Button
-						style={{ marginLeft: "12px" }}
-						className={styles.btn}
-						variant="warning"
+						variant="success"
 						onClick={() => {
-							updateFruit();
+							addFruits();
 						}}
 					>
-						Up Date Fruit
+						Add Fruits
 					</Button>
-				)}
-			</div>
-			<br />
+					<Button
+						className={fruuitstyles.input_btn}
+						variant="dark"
+						onClick={() => {
+							clearData();
+						}}
+					>
+						Clear List
+					</Button>
 
-			<br />
-
-			<div className={styles.listArea}>
-				{/* <ul> */}
-				{Fruits.map((data, index) => (
-					<li key={index}>
-						<span> {index + 1}</span>
-						<span> {data.name}</span>
-						<span>{data.quantity}</span>
-						<span> {data.price}</span>
+					{SellectedIndex !== null && (
 						<Button
-							style={{ marginLeft: "20px" }}
-							className={styles.btn}
-							variant="info"
+							className={fruuitstyles.input_btn}
+							variant="warning"
 							onClick={() => {
-								editFruit(index);
+								updateFruit();
 							}}
 						>
-							Edit
+							Up Date Fruit
 						</Button>
+					)}
+				</div>
+				<br />
 
-						<Button
-							style={{ marginLeft: "12px" }}
-							className={styles.btn}
-							variant="danger"
-							onClick={() => {
-								deleteFruit(index);
-							}}
-						>
-							Delete
-						</Button>
-					</li>
-				))}
-				{/* </ul> */}
-			</div>
-			<br />
+				<div>
+					{Fruits.map((data, index) => (
+						<div key={index}>
+							<Row>
+								<Col className="Col-5 mt-5 "></Col>
+
+								<Col className="Col-1 ">
+									<span> {index + 1}</span>
+								</Col>
+								<Col>
+									<span> {data.name}</span>
+								</Col>
+								<Col>
+									<span> {data.price}</span>
+								</Col>
+								<Col>
+									{" "}
+									<span>{data.quantity}</span>
+								</Col>
+								<Col>
+									{" "}
+									<span> {data.price}</span>
+								</Col>
+
+								<Col className="Col-1 ">
+									<Button
+										variant="info"
+										onClick={() => {
+											editFruit(index);
+										}}
+									>
+										Edit
+									</Button>
+								</Col>
+								<Col className="Col-1 ">
+									<Button
+										variant="danger"
+										onClick={() => {
+											deleteFruit(index);
+										}}
+									>
+										Delete
+									</Button>
+								</Col>
+							</Row>
+						</div>
+					))}
+				</div>
+			</Form>
 		</div>
 	);
 };

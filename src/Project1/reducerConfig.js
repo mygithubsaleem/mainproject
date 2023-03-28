@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import animalReducer from "./animalReducer";
 import valueReducer from "./valueReducer";
+
 const combinedReducers = combineReducers({
 	valueReducer,
 	animalReducer,

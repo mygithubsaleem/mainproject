@@ -1,0 +1,26 @@
+.value_body {
+	background-color: red;
+}
+h1 {
+	text-align: center;
+	padding-top: 5%;
+
+}
+link {
+	text-decoration: none;
+	color: black;
+	padding-left: 5%;
+}
+p {
+	text-align: center;
+	font-size: 100px;
+	padding-top: 5%;
+
+	
+}
+button{
+	text-align: center;
+	font-size: 100px;
+
+
+}

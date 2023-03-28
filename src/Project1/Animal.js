@@ -6,8 +6,8 @@ import request from "axios";
 import { setAnimals } from "./animalActions";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button } from "react-bootstrap";
-
+import { Button, Row, Col } from "react-bootstrap";
+import animalStyles from "./animal.module.css";
 const Animal = (props) => {
 	useEffect(() => {
 		// did mount
@@ -20,12 +20,7 @@ const Animal = (props) => {
 				console.log(err.response);
 			});
 	}, []);
-	const {
-		animalArray,
-		setAdd_animal_data,
-		set_Del_Animal_Action,
-		setclear_Animals_data,
-	} = props;
+	const { animalArray, setAdd_animal_data, set_Del_Animal_Action, setclear_Animals_data } = props;
 	const [SellectedIndex, setSellectedIndex] = useState(null);
 	const [currentInput, setCurrentInput] = useState("");
 
@@ -60,16 +55,16 @@ const Animal = (props) => {
 	};
 
 	return (
-		<div className="animal" style={{ backgroundColor: "skyblue" }}>
-			<Link className="link_animal" to="/">
-				<h1 style={{ color: "black" }}>Home</h1>
+		<div className={animalStyles.headerArea}>
+			<Link className={animalStyles.link_animal} to="/">
+				<h1>Go to Main Page</h1>
 			</Link>
 
 			<br />
-			<div className="top_area_animal" style={{ textAlign: "center" }}>
+			<div className={animalStyles.top_area_animal}>
 				<label>Enter The Animal Name</label>
 				<input
-					style={{ marginLeft: "2%" }}
+					className={animalStyles.input_tag}
 					type="text"
 					value={currentInput}
 					onChange={(e) => {
@@ -83,16 +78,11 @@ const Animal = (props) => {
 					Add Animal
 				</Button>
 
-				<Button
-					variant="dark"
-					style={{ marginLeft: "10px" }}
-					onClick={clearAnimal}
-				>
+				<Button variant="dark" className={animalStyles.clear_button} onClick={clearAnimal}>
 					Clear Animals
 				</Button>
 				{SellectedIndex !== null && (
 					<Button
-						style={{ marginLeft: "10px" }}
 						variant="warning"
 						onClick={() => {
 							update_Current_Input();
@@ -103,17 +93,17 @@ const Animal = (props) => {
 				)}
 			</div>
 			<br />
-			<div style={{ marginLeft: "35%" }} className="list_data">
+			<div className={animalStyles.list_data}>
 				<ul>
 					{animalArray.map((a, index) => (
-						<li key={index}>
+						<div key={index} className={animalStyles.list_tag}>
+							<br />
 							<table>
 								<tr>
-									<td style={{ width: "300px", backgroundColor: "yellow" }}>
-										{a.API}
-									</td>
+									<td className={animalStyles.api_data}>{a.API}</td>
 									<td>
 										<Button
+											className={animalStyles.animal_button}
 											onClick={() => {
 												edit_Animal(index);
 											}}
@@ -123,6 +113,7 @@ const Animal = (props) => {
 									</td>
 									<td>
 										<Button
+											className={animalStyles.animal_button}
 											variant="danger"
 											onClick={() => {
 												deleteAnimal(index);
@@ -133,7 +124,7 @@ const Animal = (props) => {
 									</td>
 								</tr>
 							</table>
-						</li>
+						</div>
 					))}
 				</ul>
 			</div>
@@ -152,8 +143,7 @@ const MDP = (dispatch) => ({
 	setAnimals: (data) => dispatch(setAnimals(data)),
 	setclear_Animals_data: () => dispatch({ type: "CLEAR_ANIMALS" }),
 
-	set_Del_Animal_Action: (data) =>
-		dispatch({ type: "DELETE_ANIMAL", payload: data }),
+	set_Del_Animal_Action: (data) => dispatch({ type: "DELETE_ANIMAL", payload: data }),
 
 	update_Animal_Action: (data) =>
 		dispatch({
@@ -172,3 +162,9 @@ const MDP = (dispatch) => ({
 		}),
 });
 export default connect(MSP, MDP)(Animal);
+
+const styles = {
+	animal: {
+		background: "red",
+	},
+};

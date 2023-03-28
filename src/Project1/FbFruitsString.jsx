@@ -1,10 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import styles from "./Fruits.module.css";
-import { Button, Table } from "react-bootstrap";
+import fruuitstyles from "./Fruits.module.css";
+import { Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FbFruitsString = (props) => {
 	const [Fruits, setFruits] = useState(["apple", "mango", "banana"]);
@@ -37,23 +35,19 @@ const FbFruitsString = (props) => {
 		setSelectedIndex(null);
 	};
 	return (
-		<div className={styles.body}>
-			<br />
-			<div>
+		<div className={fruuitstyles.body}>
+			<Form>
 				<h1>
-					{" "}
-					<Link to="/">Home</Link>
+					<Link className={fruuitstyles.fruit_link} to="/">
+						Home
+					</Link>
 				</h1>
-			</div>
 
-			<br />
-
-			<>
-				<div className={styles.inputArea}>
+				<div className={fruuitstyles.inputArea}>
 					<h2>Shoping Cart-1</h2>
 					<label>Enter Any Fruit</label>
 					<input
-						style={{ marginLeft: "3%" }}
+						className={fruuitstyles.input_box}
 						type="text"
 						value={CurrentInput}
 						onChange={(e) => {
@@ -64,7 +58,7 @@ const FbFruitsString = (props) => {
 					<br />
 					<br />
 					<Button
-						className={styles.btn}
+						className={fruuitstyles.input_btn}
 						variant="success"
 						onClick={() => {
 							AddFruit();
@@ -73,9 +67,8 @@ const FbFruitsString = (props) => {
 						Add Fruit
 					</Button>
 					<Button
-						className={styles.btn}
+						className="ml-3"
 						variant="dark"
-						style={{ marginLeft: "2%" }}
 						onClick={() => {
 							ClearFruit();
 						}}
@@ -85,7 +78,7 @@ const FbFruitsString = (props) => {
 
 					{SelectedIndex !== null && (
 						<Button
-							style={{ marginLeft: "20px" }}
+							className={fruuitstyles.input_btn}
 							variant="warning"
 							onClick={() => {
 								UpdateFruits();
@@ -95,38 +88,40 @@ const FbFruitsString = (props) => {
 						</Button>
 					)}
 				</div>
-
 				<br />
-				<br />
-				<div className={styles.listArea}>
+				<div>
 					{Fruits.map((data, index) => (
-						<li key={index}>
-							<span> {index + 1}</span>
-							<span>{data}</span>
-							<Button
-								style={{ marginLeft: "20px" }}
-								variant="info"
-								onClick={() => {
-									EditFruits(index);
-								}}
-							>
-								Edit
-							</Button>
-							<Button
-								style={{ marginLeft: "12px" }}
-								className={styles.btn}
-								variant="danger"
-								onClick={() => {
-									DeleteFruit(index);
-								}}
-							>
-								Delete
-							</Button>
-						</li>
+						<div key={index}>
+							<Row>
+								<Col className="col-5 mt-5"></Col>
+								<Col className="col-1">
+									<span>{data}</span>
+								</Col>
+								<Col className="col-1 ">
+									<Button
+										variant="info"
+										onClick={() => {
+											EditFruits(index);
+										}}
+									>
+										Edit
+									</Button>
+								</Col>
+								<Col className="col-1 ">
+									<Button
+										variant="danger"
+										onClick={() => {
+											DeleteFruit(index);
+										}}
+									>
+										Delete
+									</Button>
+								</Col>
+							</Row>
+						</div>
 					))}
 				</div>
-				<br />
-			</>
+			</Form>
 		</div>
 	);
 };

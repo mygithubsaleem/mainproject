@@ -1,20 +1,20 @@
-.heading1 {
-	color: blue;
-	text-align: center;
-}
-
 .body {
 	background-color: wheat;
 }
+.fruit_link {
+	text-decoration: none;
+	color: black;
+	padding-left: 5%;
+}
+
 .inputArea {
 	text-align: center;
 }
-.listArea {
-	text-align: center;
+.input_box {
+	margin-left: 10px;
+	margin-top: 10px;
 }
-.container {
-	text-align: center;
-}
-li {
-	margin: 5px;
+.input_btn {
+	margin-left: 10px;
+	margin-right: 10px;
 }

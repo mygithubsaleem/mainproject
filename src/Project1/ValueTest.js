@@ -1,49 +1,53 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
+import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import valueStyles from "../ValueTest.css";
 
 const ValueTest = (props) => {
 	const { value, inc, dec } = props;
 
 	return (
-		<div className="value-body">
-			<h1>Value Test</h1>
-			<Link className="link_home" to="/">
-				<h1 align="left" className="home-link">
-					Home
-				</h1>
-			</Link>
-
-			<p style={{ fontSize: "100px" }}>{value}</p>
+		<div className={valueStyles.value_body}>
+			<h1>Value-Test</h1>
 			<div>
-				<Button
-					className="value-btn"
-					variant="success"
-					style={{ fontSize: "100px" }}
-					onClick={inc}
+				<Link
+					to="/"
+					style={{
+						marginLeft: "20%",
+						marginTop: "5%",
+						color: "black",
+						fontSize: "35px",
+						textDecoration: "none",
+					}}
 				>
-					+
-				</Button>
-				<Button
-					className="value-btn"
-					variant="danger"
-					style={{ fontSize: "100px" }}
-					onClick={dec}
-				>
-					-
-				</Button>
+					Main-Page
+				</Link>
 			</div>
-			<span>{}</span>
-			<br />
+
+			<p> {value}</p>
+			<Button
+				style={{ "min-height": "80px", width: "5%", marginLeft: "45%", marginTop: "5%" }}
+				variant="success"
+				onClick={inc}
+			>
+				+
+			</Button>
+			<Button
+				style={{ "min-height": "80px", width: "5%", marginLeft: "20px", marginTop: "5%" }}
+				variant="danger"
+				onClick={dec}
+			>
+				-
+			</Button>
 		</div>
 	);
 };
 // MSP means map state to props....
 
 const MSP = (store) => ({
-	value: store.newvalueReducer.value,
+	value: store.valueReducer.value,
 });
 
 // MDP means map dispatch to props....
