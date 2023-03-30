@@ -10,8 +10,6 @@ import { Routes, Route } from "react-router-dom";
 import FbFruitObject from "./Project1/FbFruitObject";
 import FbFruitsString from "./Project1/FbFruitsString";
 import MainPagePr from "./MainPagesFolder/MainPagePr";
-import LoginFormPr from "./PrProject/LoginFormPr";
-import HomePagePr from "./PrProject/HomePagePr";
 import Demo from "./Project1/Demo";
 import MainPageParots from "./MainPagesFolder/MainPageParots";
 import MainPageCharts from "./MainPagesFolder/MainPageCharts";
@@ -25,9 +23,17 @@ import HomeParot from "./ParotApp/HomeParot";
 import LoginForm from "./Project1/LoginForm";
 import BarChart1 from "./ChartsApp/BarChart1";
 import PieChart1 from "./ChartsApp/PieChart1";
-import PieChart2 from "./ChartsApp/PieChart2";
+import DonutChart from "./ChartsApp/DonutChart";
 import ParotHeader from "./ParotApp/ParotHeader";
 import ParotFotter from "./ParotApp/ParotFotter";
+import AboutUsPr from "./PrProject/AboutUsPr";
+import BlogPr from "./PrProject/BlogPr";
+import ContactUsPr from "./PrProject/ContactUsPr";
+import Homepr from "./PrProject/HomePr";
+import LoginPr from "./PrProject/LoginPr";
+import ServicesPr from "./PrProject/ServicesPr";
+import SignUpPr from "./PrProject/SignUpPr";
+import AreaChart1 from "./ChartsApp/AreaChart1";
 
 const App = (props) => {
 	return (
@@ -40,8 +46,6 @@ const App = (props) => {
 				<Route path="FbFruitObject" element={<FbFruitObject />} />
 				<Route path="FbFruitString" element={<FbFruitsString />} />
 				<Route path="MainPagePr" element={<MainPagePr />} />
-				<Route path="HomePagePr" element={<HomePagePr />} />
-				<Route path="LoginFormPr" element={<LoginFormPr />} />
 				<Route path="Demo" element={<Demo />} />
 				<Route path="MainPageParots" element={<MainPageParots />} />
 				<Route path="MainPageCharts" element={<MainPageCharts />} />
@@ -54,10 +58,18 @@ const App = (props) => {
 				<Route path="ServiceParot" element={<ServiceParot />} />
 				<Route path="PrivacyParot" element={<PrivacyParot />} />
 				<Route path="LoginForm" element={<LoginForm />} />
-				<Route path="PieChart1" element={<PieChart2 />} />
+				<Route path="DonutChart" element={<DonutChart />} />
 				<Route path="ParotHeader" element={<ParotHeader />} />
 				<Route path="ParotFotter" element={<ParotFotter />} />
 				<Route path="HomeParot" element={<HomeParot />} />
+				<Route path="SignUpPr" element={<SignUpPr />} />
+				<Route path="AboutUsPr" element={<AboutUsPr />} />
+				<Route path="BlogPr" element={<BlogPr />} />
+				<Route path="ContactUsPr" element={<ContactUsPr />} />
+				<Route path="HomePr" element={<Homepr />} />
+				<Route path="LoginPr" element={<LoginPr />} />
+				<Route path="ServicesPr" element={<ServicesPr />} />
+				<Route path="AreaChart1" element={<AreaChart1 />} />
 			</Routes>
 		</div>
 	);

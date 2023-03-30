@@ -4,9 +4,9 @@
 h1 {
 	color: black;
 }
-.link_animal {
+/* .link_animal {
 	text-decoration: none;
-}
+} */
 .top_area_animal {
 	text-align: center;
 }
@@ -28,9 +28,10 @@ h1 {
 .animal_button {
 	margin-left: 20px;
 }
-table{
-
-    border-collapse: separate;
-    border-spacing: 10px;
-
+table {
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+.inputArea {
+	text-align: center;
 }

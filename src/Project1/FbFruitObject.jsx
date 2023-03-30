@@ -3,6 +3,7 @@ import { useState } from "react";
 import fruuitstyles from "./Fruits.module.css";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import MainPageProject1 from "../MainPagesFolder/MainPageProject1";
 
 const FbFruitObject = (props) => {
 	const [Fruits, setFruits] = useState([
@@ -41,16 +42,8 @@ const FbFruitObject = (props) => {
 	};
 	return (
 		<div className={fruuitstyles.body}>
+			<MainPageProject1 />
 			<Form>
-				<h1>
-					{" "}
-					<Link className={fruuitstyles.fruit_link} to="/">
-						Home
-					</Link>
-				</h1>
-				<br />
-
-				<br />
 				<div className={fruuitstyles.inputArea}>
 					<h2>Shoping Cart-2</h2>
 

@@ -1,11 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import MainPageCharts from "../MainPagesFolder/MainPageCharts";
 
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Legend, Tooltip } from "recharts";
 import { useState } from "react";
 const LineChart1 = () => {
-	
 	const [studentArray2, setStudentArray2] = useState([
 		{ Course: "html", Students: 15, Fee: 100 },
 		{ Course: "css", Students: 20, Fee: 10 },
@@ -17,11 +16,8 @@ const LineChart1 = () => {
 
 	return (
 		<div>
-			<br />
-			<br />
-
+			<MainPageCharts />
 			<>
-				<Link to="/">Main-Page</Link>
 				<h1>Line-Chart</h1>
 
 				<ResponsiveContainer className="respons_cont">

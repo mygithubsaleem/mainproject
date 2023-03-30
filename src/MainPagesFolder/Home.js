@@ -13,11 +13,11 @@ const Home = (prosp) => {
 
 	return (
 		<div style={{ backgroundColor: "skyblue" }}>
-			<h1>Main Page</h1>
+			<h3>Main Page</h3>
 			<>
 				<Navbar bg="dark" variant="dark">
 					<Container>
-						<Button  variant="primary" onClick={handleShow}>
+						<Button variant="primary" onClick={handleShow}>
 							Menu
 						</Button>
 

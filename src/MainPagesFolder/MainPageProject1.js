@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Button } from "react-bootstrap";
-// import mpStyles from "./MainPages.css";
+import mpStyles from "../MainPages.css";
 
 function MainPageProject1() {
 	const [show, setShow] = useState(false);
@@ -11,7 +11,7 @@ function MainPageProject1() {
 	const handleShow = () => setShow(true);
 	return (
 		<div style={{ backgroundColor: "skyblue" }}>
-			<h1>Projec-1</h1>
+			<h3>Project-1</h3>
 			<>
 				<Navbar expand="sm" bg="dark" variant="dark">
 					<Container>
@@ -30,8 +30,6 @@ function MainPageProject1() {
 				</Navbar>
 			</>
 
-			<br />
-			<br />
 			<>
 				{/* <Offcanvas.Body> */}
 

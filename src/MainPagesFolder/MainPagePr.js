@@ -11,27 +11,27 @@ function MainPagePr() {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 	return (
-		<div >
-			<h1>PR Project</h1>
+		<div style={{ backgroundColor: "skyblue" }}>
+			<h3>PR Project</h3>
 			<>
-				<Navbar bg="dark" variant="dark">
+				<Navbar expand="sm" bg="dark" variant="dark">
 					<Container>
 						<Button variant="primary" onClick={handleShow}>
-							Show Menu
+							Menu
 						</Button>
 
-						<Nav className="me-auto">
-							<Nav.Link href="./">Main-Page</Nav.Link>
-							<Nav.Link href="./AboutusPr">About Us</Nav.Link>
-							<Nav.Link href="./ServicesPr">Services</Nav.Link>
-							<Nav.Link href="./ContactPr">Contact us</Nav.Link>
-							<Nav.Link href="./BlogPr">Blog</Nav.Link>
-						</Nav>
+						<Navbar.Brand href="./">Main-Page</Navbar.Brand>
+						<Navbar.Brand href="./HomePr">Home </Navbar.Brand>
+						<Navbar.Brand href="./AboutUsPr">About Us</Navbar.Brand>
+						<Navbar.Brand href="./ServicesPr">Services</Navbar.Brand>
+						<Navbar.Brand href="./LoginPr">Login</Navbar.Brand>
+						<Navbar.Brand href="./ContacUstPr">Contact Us</Navbar.Brand>
+						<Navbar.Brand href="./SignUpPr">Sign Up</Navbar.Brand>
+
+						<Navbar.Brand href="./BlogPr">Blog</Navbar.Brand>
 					</Container>
 				</Navbar>
 			</>
-			<br />
-			<br />
 			<>
 				<Offcanvas show={show} onHide={handleClose}>
 					<Offcanvas.Header closeButton>
@@ -41,22 +41,48 @@ function MainPagePr() {
 					<div className="sidebar">
 						<Link to="/">
 							<Button className="block" type="button">
-								Home
+								Main-Page{" "}
 							</Button>
 						</Link>
 						<br />
-						<Link to="/NewProject1">
+
+						<Link to="/MainPageProject1">
 							<Button className="block" type="button">
-								Project-1
+								Project-1{" "}
 							</Button>
 						</Link>
 						<br />
-						<Link to="/HomePagePr">
+
+						<Link to="/MainPagePr">
 							<Button className="block" type="button">
-								PR Home
+								PR-Project
 							</Button>
 						</Link>
 						<br />
+
+						<Link to="/MainPageCharts">
+							<Button className="block" type="button">
+								Charts-App{" "}
+							</Button>
+						</Link>
+						<br />
+
+						<Link to="/MainPageParots/">
+							<Button className="block" type="button">
+								Parot-App
+							</Button>
+						</Link>
+						<Link to="/LoginForm">
+							<Button className="block" type="button">
+								Login
+							</Button>
+						</Link>
+
+						<Link to="Demo/">
+							<Button className="block" type="button">
+								Demo-App
+							</Button>
+						</Link>
 					</div>
 				</Offcanvas>
 			</>

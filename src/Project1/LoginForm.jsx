@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-//import styles from "./Login.css";
+import lgincss from "./Login.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Alert, Button } from "react-bootstrap";
 import { Json, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import MainPageProject1 from "../MainPagesFolder/MainPageProject1";
 
 const LoginForm = () => {
 	const [userArray, setUserArray] = useState([
@@ -26,6 +27,8 @@ const LoginForm = () => {
 		const findUser = userArray.find((element) => {
 			return element.email === currentInput.email && element.pw === currentInput.pw;
 		});
+		setCurrentInpput({ email: "", pw: "" });
+
 		// const findUser = userArray.filter(
 		// 	(userData, index) => userData.email === currentInput.email && userData.pw === currentInput.pw
 		// );
@@ -38,23 +41,22 @@ const LoginForm = () => {
 		}
 	};
 	return (
-		<div style={{ textAlign: "center" }}>
-			<h1>Login Form.....</h1>
-			<h1 style={{ textAlign: "left" }}>
-				{" "}
-				<Link to="/">Home</Link>
-			</h1>
+		<div style={{ textAlign: "center", backgroundColor: "wheat" }}>
+			<MainPageProject1 />
 			<div>
+				<br />
 				<label>Enter email:</label>
 				<input
+					className="m-2"
 					type="text"
 					value={currentInput.email}
 					onChange={(e) => {
 						setCurrentInpput({ ...currentInput, email: e.target.value });
 					}}
 				/>
-				<label>Enter password:</label>
+				<label className=" m-3">Enter password:</label>
 				<input
+					className="m-2"
 					type={togAction ? "password" : "text"}
 					value={currentInput.pw}
 					onChange={(e) => {
@@ -90,13 +92,9 @@ const LoginForm = () => {
 			<br />
 
 			{userArray.map((data, index) => (
-				<li key={index}>
-					<h1>
-						<p style={{ background: "blue", color: "white" }}>
-							Email:...{data.email}PassWord:...{data.pw}
-						</p>
-					</h1>
-				</li>
+				<div key={index}>
+					Email:...{data.email}PassWord:...{data.pw}
+				</div>
 			))}
 			{/* <div>
 				<h1>{!fruit && <h3>apple</h3>}</h1>

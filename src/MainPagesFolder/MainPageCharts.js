@@ -12,26 +12,25 @@ const MainPageCharts = (prosp) => {
 	const handleShow = () => setShow(true);
 	return (
 		<div className="home-body" style={{ backgroundColor: "skyblue" }}>
-			<h1>Charts-App</h1>
+			<h3>Charts-App</h3>
 			<>
 				<Navbar bg="dark" variant="dark">
 					<Container>
 						<Button variant="primary" onClick={handleShow}>
-							Show Menu
+							Menu
 						</Button>
 
 						{/* <Navbar.Brand href="#home">Navbar</Navbar.Brand> */}
-						<Nav className="">
-							<Nav.Link href="./">Main-Page</Nav.Link>
-							<Nav.Link href="../LineChart1">Line-Chart</Nav.Link>
-							<Nav.Link href="../BarChart1">Bar-Chart</Nav.Link>
-							<Nav.Link href="../PieChart1">Pie-Chart</Nav.Link>
-							<Nav.Link href="../PieChart2">Pie-Chart2</Nav.Link>
-						</Nav>
+						<Navbar.Brand href="./">Main-Page</Navbar.Brand>
+						<Navbar.Brand href="../LineChart1">Line Chart</Navbar.Brand>
+						<Navbar.Brand href="../BarChart1">Bar Chart</Navbar.Brand>
+						<Navbar.Brand href="../PieChart1">Pie Chart</Navbar.Brand>
+						<Navbar.Brand href="../DonutChart">Donut Chart</Navbar.Brand>
+						<Navbar.Brand href="../AreaChart1">Area Chart</Navbar.Brand>
+
 					</Container>
 				</Navbar>
 			</>
-			<br />
 			<>
 				<Container>
 					<Offcanvas show={show} onHide={handleClose}>
@@ -73,6 +72,12 @@ const MainPageCharts = (prosp) => {
 									Parot-App
 								</Button>
 							</Link>
+							<Link to="/LoginForm">
+								<Button className="block" type="button">
+									Login
+								</Button>
+							</Link>
+
 							<Link to="Demo/">
 								<Button className="block" type="button">
 									Demo-App
