@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainPageCharts from "../MainPagesFolder/MainPageCharts";
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend, Tooltip,Line } from "recharts";
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend, Tooltip, Line } from "recharts";
 
 const PieChart1 = () => {
-	const data = [
+	const [data, setData] = useState([
 		{ name: "Group A", value: 800 },
 		{ name: "Group B", value: 300 },
 		{ name: "Group C", value: 300 },
 		{ name: "Group D", value: 500 },
-	];
+	]);
 	const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 	const RADIAN = Math.PI / 180;

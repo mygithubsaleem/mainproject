@@ -1,9 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainPageCharts from "../MainPagesFolder/MainPageCharts";
-
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Legend, Tooltip } from "recharts";
-import { useState } from "react";
 const LineChart1 = () => {
 	const [studentArray2, setStudentArray2] = useState([
 		{ Course: "html", Students: 15, Fee: 100 },

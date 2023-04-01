@@ -1,15 +1,15 @@
+import React, { PureComponent, useState } from "react";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Line, Legend } from "recharts";
 import MainPageCharts from "../MainPagesFolder/MainPageCharts";
-/* eslint-disable no-shadow */
-import React, { PureComponent } from "react";
-import { PieChart, Pie, Cell, Sector, ResponsiveContainer, Tooltip, Line, Legend } from "recharts";
 
 const DonutChart = () => {
 	const RADIAN = Math.PI / 180;
-	const data = [
+	const [data, setData] = useState([
 		{ name: "A", value: 80, color: "#ff0000" },
 		{ name: "B", value: 45, color: "#00ff00" },
 		{ name: "C", value: 25, color: "#0000ff" },
-	];
+	]);
+
 	const cx = 150;
 	const cy = 200;
 	const iR = 50;
@@ -17,7 +17,7 @@ const DonutChart = () => {
 	const value = 50;
 
 	return (
-		<div >
+		<div>
 			<MainPageCharts />
 			<h1>Donut Chart</h1>
 

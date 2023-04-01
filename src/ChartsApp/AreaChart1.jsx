@@ -1,5 +1,7 @@
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import MainPageCharts from "../MainPagesFolder/MainPageCharts";
-import React, { PureComponent } from "react";
+
 import {
 	AreaChart,
 	Area,
@@ -13,7 +15,7 @@ import {
 } from "recharts";
 
 const AreaChart1 = () => {
-	const data = [
+	const [data, setData] = useState([
 		{
 			name: "Page A",
 			uv: 4000,
@@ -56,7 +58,7 @@ const AreaChart1 = () => {
 			pv: 4300,
 			amt: 2100,
 		},
-	];
+	]);
 
 	const gradientOffset = () => {
 		const dataMax = Math.max(...data.map((i) => i.uv));
@@ -79,37 +81,60 @@ const AreaChart1 = () => {
 			<MainPageCharts />
 			<h1>Area Chart</h1>
 
-			<div>
-				<ResponsiveContainer width="100%" height="100%">
+			{
+				<ResponsiveContainer className="respons_cont" width="100%" height="100%">
 					<AreaChart
-						width={500}
-						height={400}
+						width={700}
+						height={700}
 						data={data}
 						margin={{
 							top: 10,
-							right: 0,
+							right: 30,
 							left: 0,
 							bottom: 0,
 						}}
 					>
 						<CartesianGrid strokeDasharray="3 3" />
-						<XAxis dataKey="name" />
-						<YAxis />
-						<Tooltip contentStyle={{ backgroundColor: "yellow" }} />
-						<Legend iconType="star" iconSize={25} />
-						<Line dataKey="uv" stroke="red" activeDot={{ r: 18 }} />
-						<Line dataKey="pv" stroke="blue" activeDot={{ r: 18 }} />
-
 						<defs>
 							<linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
 								<stop offset={off} stopColor="green" stopOpacity={1} />
 								<stop offset={off} stopColor="red" stopOpacity={1} />
 							</linearGradient>
 						</defs>
+
+						<XAxis dataKey="name" />
+						<YAxis />
+
 						<Area type="monotone" dataKey="uv" stroke="#000" fill="url(#splitColor)" />
+						<Tooltip contentStyle={{ backgroundColor: "yellow" }} />
+						<Legend iconType="star" iconSize={75} />
+						<Line dataKey="up" stroke="red" activeDot={{ r: 18 }} />
+						<Line dataKey="uv" stroke="blue" activeDot={{ r: 18 }} />
 					</AreaChart>
 				</ResponsiveContainer>
-			</div>
+
+				/* <ResponsiveContainer className="respons_cont" width="100%" height="100%">
+				<AreaChart
+					width={500}
+					height={400}
+					data={data}
+					margin={{
+						top: 10,
+						right: 30,
+						left: 0,
+						bottom: 0,
+					}}
+				>
+					<CartesianGrid strokeDasharray="3 3" />
+					<XAxis dataKey="name" />
+					<YAxis />
+					<Tooltip />
+					<Area type="monotone" dataKey="uv" stackId="1" stroke="blue" fill="blue" />
+					<Area type="monotone" dataKey="pv" stackId="1" stroke="red" fill="red" />
+					<Area type="monotone" dataKey="amt" stackId="1" stroke="green" fill="black" />
+				</AreaChart>
+			</ResponsiveContainer> */
+			}
 		</div>
 	);
 };

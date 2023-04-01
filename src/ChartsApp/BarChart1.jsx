@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MainPageCharts from "../MainPagesFolder/MainPageCharts";
 
-import { ResponsiveContainer,CartesianGrid,Label,LabelList,Bar, BarChart, XAxis, YAxis, Legend, Tooltip,Line } from "recharts";
+import {
+	ResponsiveContainer,
+	CartesianGrid,
+	Label,
+	LabelList,
+	Bar,
+	BarChart,
+	XAxis,
+	YAxis,
+	Legend,
+	Tooltip,
+	Line,
+} from "recharts";
 
 const BarChart1 = () => {
-	const data = [
+	const [data, setDate] = useState([
 		{
 			name: "Page A",
 			uv: 4000,
@@ -41,10 +53,10 @@ const BarChart1 = () => {
 			uv: 3490,
 			pv: 4300,
 		},
-	];
+	]);
 
 	return (
-		<div style={{backgroundColor:"lightblue"}}>
+		<div style={{ backgroundColor: "lightblue" }}>
 			<MainPageCharts />
 			<>
 				<h1>Bar-Chart</h1>
@@ -61,21 +73,15 @@ const BarChart1 = () => {
 							{/* <Label value="Pages of my website" offset={0} position="insideBottom" /> */}
 						</XAxis>
 						{/* <YAxis label={{ value: "pv of page", angle: -90, position: "insideLeft" }} /> */}
-						<Bar dataKey="pv" fill="#8884d8">
+						<Bar dataKey="pv" fill="red">
 							<LabelList dataKey="name" position="top" />
-
 						</Bar>
-						<Bar dataKey="uv" fill="#FF8042">
+						<Bar dataKey="uv" fill="black">
 							<LabelList dataKey="name" position="top" />
-
 						</Bar>
-
 
 						<Tooltip contentStyle={{ backgroundColor: "yellow" }} />
 						<Legend iconType="star" iconSize={125} />
-						<Line dataKey="pv" stroke="red" activeDot={{ r: 18 }} />
-						<Line dataKey="uv" stroke="blue" activeDot={{ r: 18 }} />
-
 					</BarChart>
 				</ResponsiveContainer>
 			</>
