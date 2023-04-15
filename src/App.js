@@ -34,6 +34,14 @@ import LoginPr from "./PrProject/LoginPr";
 import ServicesPr from "./PrProject/ServicesPr";
 import SignUpPr from "./PrProject/SignUpPr";
 import AreaChart1 from "./ChartsApp/AreaChart1";
+import MernHeader from "./MernApp/MernHeader";
+import MgprHeader from "./MgprApp/MgprHeader";
+import MernHome from "./MernApp/MernHome";
+import MernAboutus from "./MernApp/MernAboutus";
+import MernLogin from "./MernApp/MernLogin";
+import MernErrorPage from "./MernApp/MernErrorPage";
+import MernSignup from "./MernApp/MernSignup";
+import MernContactus from "./MernApp/MernContacus";
 
 const App = (props) => {
 	return (
@@ -70,6 +78,13 @@ const App = (props) => {
 				<Route path="LoginPr" element={<LoginPr />} />
 				<Route path="ServicesPr" element={<ServicesPr />} />
 				<Route path="AreaChart1" element={<AreaChart1 />} />
+				<Route path="MernHeader" element={<MernHeader />} />
+				<Route path="MernHome" element={<MernHome />} />
+				<Route path="MernAboutus" element={<MernAboutus />} />
+				<Route path="MernContactus" element={<MernContactus />} />
+				<Route path="MernLogin" element={<MernLogin />} />
+				<Route path="MernSignup" element={<MernSignup />} />
+				<Route path="MernErrorpage" element={<MernErrorPage />} />
 			</Routes>
 		</div>
 	);

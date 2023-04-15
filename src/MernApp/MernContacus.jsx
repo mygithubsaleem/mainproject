@@ -1,9 +1,13 @@
 import React from "react";
 import { Row, Col, Container, Button } from "react-bootstrap";
+import MernHeader from "./MernHeader";
+
 
 const MernMenu = () => {
 	return (
 		<>
+			<p>{<MernHeader />}</p>
+
 			<form className="contact_form" id="contact_form_id">
 				<div className="d-flex flex-row mb-3  align-items-center justify-content-between col-lg-10 offset-lg-1 ">
 					<div className="contact-form pt-lg-5">

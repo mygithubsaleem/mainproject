@@ -1,11 +1,14 @@
 import React from "react";
-import emppic1 from "../Images/flower4.jpg";
+import emppic1 from "./MernImages/flower4.jpg";
 import { Tabs, Tab, Button, NavLink } from "react-bootstrap";
+import MernHeader from "./MernHeader";
 
 const MernAboutus = () => {
 	return (
 		<>
 			<div className="emp_profile ">
+				<p>{<MernHeader />}</p>
+
 				<form method="" className="aboutus-form">
 					<div className="row ">
 						<div className="col-md-5 pl-lg-5 mt-3 ">

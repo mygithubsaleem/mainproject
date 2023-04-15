@@ -22,11 +22,15 @@ const Home = (prosp) => {
 						</Button>
 
 						<Navbar.Brand href="./MainPageProject1">Project-1</Navbar.Brand>
-						<Navbar.Brand href="./MainPagePr">PR-Project</Navbar.Brand>
-						<Navbar.Brand href="./MainPageCharts">Charts-App</Navbar.Brand>
-						<Navbar.Brand href="./MainPageParots">Parot-App</Navbar.Brand>
-						<Navbar.Brand href="./Demo">Demo-App</Navbar.Brand>
+						<Navbar.Brand href="./MainPagePr">School App</Navbar.Brand>
+						<Navbar.Brand href="./MainPageCharts">Charts App</Navbar.Brand>
+						<Navbar.Brand href="./MainPageParots">Parot App</Navbar.Brand>
 						<Navbar.Brand href="./LoginForm">Login</Navbar.Brand>
+						<Navbar.Brand href="./MernHeader">Mern App</Navbar.Brand>
+						<Navbar.Brand href="./MgprHeader">MGPR App</Navbar.Brand>
+						<Navbar.Brand href="./Demo">Demo App</Navbar.Brand>
+
+
 					</Container>
 				</Navbar>
 			</>
@@ -63,6 +67,18 @@ const Home = (prosp) => {
 							<Link to="/MainPageParots/">
 								<Button className="block" type="button">
 									Parot-App
+								</Button>
+							</Link>
+							<Link to="/MernHeader">
+								<Button className="block" type="button">
+									Mern App{" "}
+								</Button>
+							</Link>
+							<br />
+
+							<Link to="/MgprHeader/">
+								<Button className="block" type="button">
+									MGPR App
 								</Button>
 							</Link>
 

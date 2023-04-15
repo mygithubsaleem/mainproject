@@ -2,13 +2,15 @@ import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
-import loginpic from "../Images/image7.png";
+import loginpic from "./MernImages/image7.png";
 import styles from "../App.css";
-import MernLogin from "./MernSignup";
+import MernHeader from "./MernHeader";
+
 
 const MernLogin = () => {
 	return (
 		<>
+			<p>{<MernHeader />}</p>
 			<section className="signin_page">
 				<div className="container ">
 					<div className="signin-content">

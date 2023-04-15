@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Form } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
-import signpic from "../Images/image6.png";
+import signpic from "./MernImages/image6.png";
 import styles from "../App.css";
 import axios from "axios";
+import MernHeader from "./MernHeader";
 
 const MernSignup = () => {
 	const navigate = useNavigate();
@@ -48,8 +49,10 @@ const MernSignup = () => {
 	return (
 		<div>
 			<>
+				{" "}
+				<p>{<MernHeader />}</p>
 				<div className="signup-form">
-					<form method="POST" className="register-form" id="register-form">
+					<Form method="POST" className="register-form" id="register-form">
 						<Row className="row no-gutters">
 							<Col className="col-3" />
 							<Col className="col-6 mt-5">
@@ -174,7 +177,7 @@ const MernSignup = () => {
 								</div>
 							</Col>
 						</Row>
-					</form>
+					</Form>
 				</div>
 			</>
 		</div>

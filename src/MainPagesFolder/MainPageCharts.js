@@ -27,7 +27,6 @@ const MainPageCharts = (prosp) => {
 						<Navbar.Brand href="../PieChart1">Pie Chart</Navbar.Brand>
 						<Navbar.Brand href="../DonutChart">Donut Chart</Navbar.Brand>
 						<Navbar.Brand href="../AreaChart1">Area Chart</Navbar.Brand>
-
 					</Container>
 				</Navbar>
 			</>
