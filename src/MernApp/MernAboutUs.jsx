@@ -2,26 +2,23 @@ import React from "react";
 import emppic1 from "./MernImages/flower4.jpg";
 import { Tabs, Tab, Button, NavLink } from "react-bootstrap";
 import MernHeader from "./MernHeader";
+import styles from "./Merncss.module.css";
 
 const MernAboutus = () => {
 	return (
 		<>
 			<div className="emp_profile ">
-				<p>{<MernHeader />}</p>
+				{<MernHeader />}
 
 				<form method="" className="aboutus-form">
-					<div className="row ">
-						<div className="col-md-5 pl-lg-5 mt-3 ">
+					<div className="row  p-lg-5">
+						<div className="col-md-5 pl-lg-5 mt-1 ">
 							<img src={emppic1} alt="saleem" width={200} height={200} />
 						</div>
-						<div className="col-md-5 p-lg-5">
-							<div className="profile">
-								<h5>Muhammad Saleem</h5>
-								<h6>Web Developer</h6>
-								<p className="profile-rating mt-3 mb-5">
-									RANKING:<span>1/10</span>
-								</p>
-							</div>
+						<div className="col-md-2 mt-3 ">
+							<h5>Muhammad Saleem</h5>
+							<h6>Web Developer</h6>
+							<h3>RANKING:1/10</h3>
 						</div>
 						<div className="col-md-2 pt-lg-5">
 							<Button className="emp-edit-btn" variant="danger">
@@ -29,9 +26,9 @@ const MernAboutus = () => {
 							</Button>
 						</div>
 					</div>
-					<div className="row mt-3 ">
-						<div className="col-md-4 p-lg-5">
-							<p>WORK LINKS</p>
+					<div className="row">
+						<div className="col-md-2 m-xl-5 ">
+							<h3>WORK LINKS</h3>
 							<a href="" target="_saleem">
 								You Tuber
 							</a>
@@ -44,6 +41,7 @@ const MernAboutus = () => {
 								Veloger
 							</a>
 						</div>
+						<div className="col-md-2"></div>
 						<div className="col-md-4 ">
 							<Tabs defaultActiveKey="profile" id="emp-tab" className="mb-3">
 								<Tab eventKey="home" title="About" justify="true">
@@ -61,27 +59,27 @@ const MernAboutus = () => {
 												<label>Saleem</label>
 												<label>saleem65.teacher@gmail.com</label>
 												<label>+923434810913</label>
-												<label>Web Developer</label>
+												<label>WebDeveloper</label>
 											</div>
 										</div>
 									</div>
 								</Tab>
 								<Tab eventKey="profile" title="Time Line">
-									<div className="col-md-4 ">
-										<div className="row">
-											<div className="col-md-6">
+									<div className="col-md-8 ">
+										<div className="row ">
+											<div className="col-md-5 ">
 												<label>Experinece</label>
 												<label> Hourly Rate</label>
 												<label> Total Projects</label>
 												<label>English Level</label>
 												<label> Availability</label>
 											</div>
-											<div className=" col-md-6 ">
+											<div className="col-md-3">
 												<label>Expert</label>
 												<label>80$/h</label>
 												<label>Ten</label>
 												<label>Expert</label>
-												<label> 3 Months</label>
+												<label>3Months</label>
 											</div>
 										</div>
 									</div>

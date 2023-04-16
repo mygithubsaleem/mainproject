@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Row, Col, Button, Form } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import signpic from "./MernImages/image6.png";
-import styles from "../App.css";
+import style from "./Merncss.module.css";
 import axios from "axios";
 import MernHeader from "./MernHeader";
 
@@ -49,27 +49,23 @@ const MernSignup = () => {
 	return (
 		<div>
 			<>
-				{" "}
-				<p>{<MernHeader />}</p>
 				<div className="signup-form">
-					<Form method="POST" className="register-form" id="register-form">
+					<form method="POST" className="register-form" id="register-form">
+						{<MernHeader />}
+
 						<Row className="row no-gutters">
-							<Col className="col-3" />
-							<Col className="col-6 mt-5">
+							<Col className="col-4" />
+							<Col className="col-4 mt-5">
 								<h2 className="ml-3">Sign up</h2>
 								<img className="signup-pic" src={signpic} alt="signupimage" />
-								<div>
-									<nav className="nav-item-active pt-3 ml-2">
-										<Button>
-											<NavLink to="/Login" className="nav-link ">
-												Login
-											</NavLink>
-										</Button>
-									</nav>
+								<div className={style.signup_login_link}>
+									<Button>
+Login										<NavLink to="/MernLogin"/>
+									</Button>
 								</div>
 							</Col>
-							<Col className="col-3 mt-5">
-								<div className="form-group">
+							<Col className="col-4">
+								<div className={style.signup_inputare}>
 									<label htmlFor="name">
 										<i className="zmdi zmdi-account metrial-icons-name mr-2"></i>
 									</label>
@@ -85,7 +81,7 @@ const MernSignup = () => {
 										placeholder="Enter Your Name "
 									/>
 								</div>
-								<div className="form-group">
+								<div className="form-group mt-3">
 									<label htmlFor="email">
 										<i className="zmdi zmdi-email metrial-icons-name mr-2"></i>
 									</label>
@@ -101,10 +97,11 @@ const MernSignup = () => {
 										placeholder="Enter Your Email "
 									/>
 								</div>
-								<div className="form-group">
-									<label htmlFor="phone">
+								<div className="form-group mt-3">
+									<label htmlFor="phone mt-3">
 										<i class="zmdi zmdi-phone metrial-icons-name mr-2"></i>
 									</label>
+
 									<input
 										type="text"
 										id="phone"
@@ -117,7 +114,7 @@ const MernSignup = () => {
 										placeholder="Enter Your Pnone Number "
 									/>
 								</div>
-								<div className="form-group">
+								<div className="form-group mt-3">
 									<label htmlFor="work">
 										<i className="zmdi zmdi-slideshow metrial-icons-name mr-2"></i>
 									</label>
@@ -133,7 +130,7 @@ const MernSignup = () => {
 										placeholder="Enter Your Profession "
 									/>
 								</div>
-								<div className="form-group">
+								<div className="form-group mt-3">
 									<label htmlFor="passwd">
 										<i className="zmdi zmdi-lock metrial-icons-name mr-2"></i>
 									</label>
@@ -149,7 +146,7 @@ const MernSignup = () => {
 										placeholder="Enter Your Pass Word "
 									/>
 								</div>
-								<div className="form-group">
+								<div className="form-group mt-3">
 									<label htmlFor="cpasswd">
 										<i className="zmdi zmdi-lock metrial-icons-name mr-2"></i>
 									</label>
@@ -165,7 +162,7 @@ const MernSignup = () => {
 										placeholder="Confirm Pass Word "
 									/>
 								</div>
-								<div className="submit-button ml-3">
+								<div className="submit-button  mt-3 ml-3">
 									<Button
 										variant="success "
 										onClick={() => {
@@ -177,7 +174,7 @@ const MernSignup = () => {
 								</div>
 							</Col>
 						</Row>
-					</Form>
+					</form>
 				</div>
 			</>
 		</div>

@@ -1,0 +1,25 @@
+.navbar {
+	background-color: rgb(89, 255, 0);
+}
+h3 {
+	background-color: aqua;
+	text-align: center;
+}
+.err_hd {
+	background-color: aqua;
+	text-align: center;
+}
+h2 {
+	background-color: aqua;
+	text-align: center;
+}
+.login_inputArea {
+	margin-top: 35%;
+}
+.signup_inputare {
+	margin-top: 30%;
+}
+.signup_login_link {
+	margin-left: 5%;
+	
+}
