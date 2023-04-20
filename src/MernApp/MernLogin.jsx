@@ -1,16 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import loginpic from "./MernImages/image7.png";
 import style from "./Merncss.module.css";
 import MernHeader from "./MernHeader";
+//const navigate = useNavigate();
 
 const MernLogin = () => {
+	const [currentInput, setCurrentInput] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		work: "",
+		passwd: "",
+		cpasswd: "",
+	});
+	const [user, setUser] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		work: "",
+		passwd: "",
+		cpasswd: "",
+	});
+
+	const userLogin = async (e) => {
+		const loginuser = { ...user, ...currentInput };
+		setUser(loginuser);
+		setCurrentInput({
+			name: "",
+			email: "",
+			phone: "",
+			work: "",
+			passwd: "",
+			cpasswd: "",
+		});
+
+		const { name, email, phone, work, passwd, cpasswd } = loginuser;
+		console.log("loged in user...", loginuser);
+
+		if (!email || !passwd) {
+			return window.alert("Please fill the empty field!");
+		}
+
+		axios
+			.post("/MernLogin", { name, email, phone, work, passwd, cpasswd })
+			.then((a) => {
+				window.alert("data sent to server successfully");
+				//return navigate("/");
+			})
+			.catch((err) => {
+				window.alert(" failed to send data to server..");
+			});
+	};
 	return (
 		<>
 			{<MernHeader />}
-			<form className="register-form" id="register-form">
+			<form method="POST" className="mern-form" id="register-form">
 				<Row className="row no-gutters">
 					<Col className="col-4" />
 					<Col className="col-4 mt-5">
@@ -36,9 +84,12 @@ const MernLogin = () => {
 							</label>
 							<input
 								type="text"
+								value={currentInput.email}
+								onChange={(e) => {
+									setCurrentInput({ ...currentInput, email: e.target.value });
+								}}
 								id="email"
 								name="email"
-								autoComplete="off"
 								placeholder="Enter Your Email "
 							/>
 						</div>
@@ -48,14 +99,19 @@ const MernLogin = () => {
 							</label>
 							<input
 								type="password"
+								value={currentInput.passwd}
+								onChange={(e) => {
+									setCurrentInput({ ...currentInput, passwd: e.target.value });
+								}}
 								id="password"
 								name="password"
-								autoComplete="off"
 								placeholder="Enter Your Pass Word "
 							/>
 						</div>
 						<div className="submit-button mt-3 ml-4">
-							<Button variant="success">Login</Button>
+							<Button variant="success" onClick={userLogin}>
+								Login
+							</Button>
 						</div>
 					</Col>
 				</Row>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col, Button, Form } from "react-bootstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import signpic from "./MernImages/image6.png";
 import style from "./Merncss.module.css";
 import axios from "axios";
@@ -28,7 +28,7 @@ const MernSignup = () => {
 	const addNewUser = async (e) => {
 		//e.preventDefault();
 		const newuser = { ...user, ...currentInput };
-		setUser(user);
+		setUser(newuser);
 		setCurrentInput({
 			name: "",
 			email: "",
@@ -39,18 +39,33 @@ const MernSignup = () => {
 		});
 
 		const { name, email, phone, work, passwd, cpasswd } = newuser;
-		console.log(newuser, "new user...");
-		axios
-			.post("/register", { name, email, phone, work, passwd, cpasswd })
-			.then((a) => console.log(a))
-			.catch((err) => console.error(err));
+		console.log("new user...", newuser);
+
+		if (!name || !email || !phone || !work || !passwd || !cpasswd) {
+			return window.alert("Please fill the empty field!");
+		} else {
+			if (currentInput.email === email) {
+				window.alert("Your are already registerd");
+				return navigate("/MernLogin");
+			}
+
+			axios
+				.post("/MernSignup", { name, email, phone, work, passwd, cpasswd })
+				.then((a) => {
+					window.alert("Registration  successfull.");
+					console.log("Registration  successfull.", a);
+				})
+				.catch((err) => {
+					window.alert("Registration  failed.");
+				});
+		}
 	};
 
 	return (
 		<div>
 			<>
 				<div className="signup-form">
-					<form method="POST" className="register-form" id="register-form">
+					<form method="POST" className="mern-form" id="register-form">
 						{<MernHeader />}
 
 						<Row className="row no-gutters">
@@ -60,7 +75,7 @@ const MernSignup = () => {
 								<img className="signup-pic" src={signpic} alt="signupimage" />
 								<div className={style.signup_login_link}>
 									<Button>
-Login										<NavLink to="/MernLogin"/>
+										Login <NavLink to="/MernLogin" />
 									</Button>
 								</div>
 							</Col>
@@ -77,7 +92,6 @@ Login										<NavLink to="/MernLogin"/>
 										onChange={(e) => {
 											setCurrentInput({ ...currentInput, name: e.target.value });
 										}}
-										autoComplete="off"
 										placeholder="Enter Your Name "
 									/>
 								</div>
@@ -93,7 +107,6 @@ Login										<NavLink to="/MernLogin"/>
 										onChange={(e) => {
 											setCurrentInput({ ...currentInput, email: e.target.value });
 										}}
-										autoComplete="off"
 										placeholder="Enter Your Email "
 									/>
 								</div>
@@ -110,8 +123,7 @@ Login										<NavLink to="/MernLogin"/>
 										onChange={(e) => {
 											setCurrentInput({ ...currentInput, phone: e.target.value });
 										}}
-										autoComplete="off"
-										placeholder="Enter Your Pnone Number "
+										placeholder="Enter Your Phone Number "
 									/>
 								</div>
 								<div className="form-group mt-3">
@@ -126,7 +138,6 @@ Login										<NavLink to="/MernLogin"/>
 										onChange={(e) => {
 											setCurrentInput({ ...currentInput, work: e.target.value });
 										}}
-										autoComplete="off"
 										placeholder="Enter Your Profession "
 									/>
 								</div>
@@ -142,7 +153,6 @@ Login										<NavLink to="/MernLogin"/>
 										onChange={(e) => {
 											setCurrentInput({ ...currentInput, passwd: e.target.value });
 										}}
-										autoComplete="off"
 										placeholder="Enter Your Pass Word "
 									/>
 								</div>
@@ -158,7 +168,6 @@ Login										<NavLink to="/MernLogin"/>
 										onChange={(e) => {
 											setCurrentInput({ ...currentInput, cpasswd: e.target.value });
 										}}
-										autoComplete="off"
 										placeholder="Confirm Pass Word "
 									/>
 								</div>
