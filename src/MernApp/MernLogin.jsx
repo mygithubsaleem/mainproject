@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import { NavLink, navigate, useNavigate } from "react-router-dom";
+import { NavLink, json, navigate, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
@@ -20,12 +20,12 @@ const MernLogin = (props) => {
 		cpasswd: "",
 	});
 	const [user, setUser] = useState({
-		name: "",
-		email: "",
-		phone: "",
-		work: "",
-		passwd: "",
-		cpasswd: "",
+		name: "anwar",
+		email: "anwar@gmail.com",
+		phone: "123",
+		work: "pilot",
+		passwd: "anwar123",
+		cpasswd: "anwar123",
 	});
 
 	const userLogin = async (e) => {
@@ -70,15 +70,13 @@ const MernLogin = (props) => {
 							<img className="login-pic" src={loginpic} alt="loginpic" />
 						</div>
 						<br />
-						<div>
-							<nav class="nav-item-active">
-								<Button variant="primary">
-									<NavLink to="/MernSignup" className="nav-link">
-										Create Account
-									</NavLink>
-								</Button>
-							</nav>
-						</div>
+						<nav class="nav-item-active">
+							<Button variant="primary">
+								<NavLink to="/MernSignup" className="nav-link">
+									Create Account
+								</NavLink>
+							</Button>
+						</nav>
 					</Col>
 					<Col className="login-col-input col-4 ">
 						<div className={style.login_inputArea}>

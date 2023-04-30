@@ -44,21 +44,18 @@ const MernSignup = () => {
 		if (!name || !email || !phone || !work || !passwd || !cpasswd) {
 			return window.alert("Please fill the empty field!");
 		}
-		// if (currentInput.email !== email) {
 		axios
 			.post("/MernSignup", { name, email, phone, work, passwd, cpasswd })
 			.then((a) => {
-				window.alert("data send to the server.");
-				console.log("data send to the server.", a);
+				// window.alert("data send to the server.");
+				// console.log("data send to the server.", a);
+				// 	window.alert("Your are already registerd");
+
 				navigate("/MernLogin");
 			})
 			.catch((err) => {
 				window.alert("Registration  failed.");
 			});
-		// } else {
-		// 	window.alert("Your are already registerd");
-		// 	return navigate("/MernLogin");
-		// }
 	};
 
 	return (
@@ -75,7 +72,9 @@ const MernSignup = () => {
 								<img className="signup-pic" src={signpic} alt="signupimage" />
 								<div className={style.signup_login_link}>
 									<Button>
-										Login <NavLink to="/MernLogin" />
+										<NavLink to="/MernLogin" className="nav-link">
+											Log In
+										</NavLink>
 									</Button>
 								</div>
 							</Col>

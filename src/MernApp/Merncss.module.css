@@ -4,6 +4,7 @@
 h3 {
 	background-color: aqua;
 	text-align: center;
+	margin-top: 10px;
 }
 .err_hd {
 	background-color: aqua;
@@ -21,4 +22,36 @@ h2 {
 }
 .signup_login_link {
 	margin-left: 5%;
+}
+.about_col1 {
+	margin-left: 15%;
+	padding-top: 2%;
+	width: 20%;
+}
+.about_col3 {
+	margin-left: 5%;
+	padding-top: 2%;
+	width: 20%;
+}
+.about_col2 {
+	margin-left: 5%;
+	padding-top: 2%;
+	width: 60%;
+}
+a {
+	text-decoration: none;
+}
+.about_label {
+	margin-left: 20px;
+}
+.about_tab {
+	color: blue;
+	border-radius: 20px;
+	padding-left: 10px;
+}
+.about_form {
+	background-color: bisque;
+}
+.about_tabs {
+	background-color: bisque;
 }
