@@ -39,9 +39,7 @@ function ContactParot(props) {
 						</Col>
 					</Row>
 				</div>
-				<Row>
-					<p>{<ParotFotter />}</p>
-				</Row>
+				<Row>{<ParotFotter />}</Row>
 			</Form>
 		</div>
 	);

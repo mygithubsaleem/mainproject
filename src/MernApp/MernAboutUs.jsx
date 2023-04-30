@@ -2,7 +2,7 @@ import React from "react";
 import emppic1 from "./MernImages/flower4.jpg";
 import { Tabs, Tab, Button, NavLink } from "react-bootstrap";
 import MernHeader from "./MernHeader";
-import styles from "./Merncss.module.css";
+import style from "./Merncss.module.css";
 
 const MernAboutus = () => {
 	return (
@@ -29,17 +29,19 @@ const MernAboutus = () => {
 					<div className="row">
 						<div className="col-md-2 m-xl-5 ">
 							<h3>WORK LINKS</h3>
-							<a href="" target="_saleem">
-								You Tuber
-							</a>
-							<br />
-							<a href="" target="_slaeem">
-								Bloger
-							</a>
-							<br />
-							<a href="" target="_saleem">
-								Veloger
-							</a>
+							<div>
+								<a href="" target="_saleem " style={{ textDecoration: "none" }}>
+									You Tuber
+								</a>
+								<br />
+								<a href="" target="_slaeem" style={{ textDecoration: "none" }}>
+									Bloger
+								</a>
+								<br />
+								<a href="" target="_saleem" style={{ textDecoration: "none" }}>
+									Veloger
+								</a>
+							</div>
 						</div>
 						<div className="col-md-2"></div>
 						<div className="col-md-4 ">

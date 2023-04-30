@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, navigate, useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 import loginpic from "./MernImages/image7.png";
 import style from "./Merncss.module.css";
 import MernHeader from "./MernHeader";
-//const navigate = useNavigate();
 
-const MernLogin = () => {
+const MernLogin = (props) => {
+	const navigate = useNavigate();
+
 	const [currentInput, setCurrentInput] = useState({
 		name: "",
 		email: "",
@@ -27,6 +29,7 @@ const MernLogin = () => {
 	});
 
 	const userLogin = async (e) => {
+		e.preventDefault();
 		const loginuser = { ...user, ...currentInput };
 		setUser(loginuser);
 		setCurrentInput({
@@ -39,22 +42,22 @@ const MernLogin = () => {
 		});
 
 		const { name, email, phone, work, passwd, cpasswd } = loginuser;
-		console.log("loged in user...", loginuser);
+		console.log("this  user..is trying to log in...", loginuser);
 
 		if (!email || !passwd) {
 			return window.alert("Please fill the empty field!");
 		}
-
 		axios
-			.post("/MernLogin", { name, email, phone, work, passwd, cpasswd })
+			.post("/MernLogin", { email, passwd })
 			.then((a) => {
-				window.alert("data sent to server successfully");
-				//return navigate("/");
+				navigate("/MernHome");
 			})
+
 			.catch((err) => {
-				window.alert(" failed to send data to server..");
+				alert(err.response.data.message);
 			});
 	};
+
 	return (
 		<>
 			{<MernHeader />}

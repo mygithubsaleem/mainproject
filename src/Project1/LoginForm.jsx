@@ -24,6 +24,9 @@ const LoginForm = () => {
 		setChangeFruit(!changeFruit);
 	};
 	const checkUser = () => {
+		if (currentInput.email === "" || currentInput.pw === "") {
+			return window.alert("PLEASE FILL THE EMPTY FIELD FIRST.");
+		}
 		const findUser = userArray.find((element) => {
 			return element.email === currentInput.email && element.pw === currentInput.pw;
 		});
@@ -33,10 +36,10 @@ const LoginForm = () => {
 		// 	(userData, index) => userData.email === currentInput.email && userData.pw === currentInput.pw
 		// );
 		if (findUser) {
-			//<Alert type="error" message="user found...." />;
-			alert("YES........");
+			//<Alert type="error" message="User found...." />;
+			alert("User found........");
 		} else {
-			alert("NO......");
+			alert("User not found......");
 			//<Alert type="success" message="User does not exist..." />;
 		}
 	};
@@ -93,7 +96,10 @@ const LoginForm = () => {
 
 			{userArray.map((data, index) => (
 				<div key={index}>
-					Email:...{data.email}PassWord:...{data.pw}
+						{" "}
+						<li>
+							Email:...{data.email}PassWord:...{data.pw}
+						</li>
 				</div>
 			))}
 			{/* <div>

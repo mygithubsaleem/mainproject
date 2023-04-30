@@ -18,3 +18,15 @@
 	margin-left: 10px;
 	margin-right: 10px;
 }
+.fruit_heading {
+	width: 60%;
+	background-color: aqua;
+	color: blue;
+	text-indent: 30%;
+}
+.fruit_row_heading {
+	margin-left: 12%;
+}
+Col {
+text-indent: 10%;
+}

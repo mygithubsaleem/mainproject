@@ -96,37 +96,6 @@ function ParotHeader() {
 									<img className={styles.carosalimages} src={data} />
 								</Carousel.Item>
 							))}
-
-							{/* <Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p1} />
-							</Carousel.Item>{" "}
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p2} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p3} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p4} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p5} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p6} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p7} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p8} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p9} />
-							</Carousel.Item>
-							<Carousel.Item interval={1000}>
-								<img className={styles.carosalimages} src={images.p10} />
-							</Carousel.Item> */}
 						</Carousel>
 					</Container>
 				</div>

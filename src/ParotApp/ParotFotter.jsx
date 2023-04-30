@@ -6,37 +6,33 @@ import insta from "./ParotsImages/insta.png";
 import facebook from "./ParotsImages/facebook.png";
 import styles from "../ParotApp/Parrot.module.css";
 import { Form, Col, Row } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.css";
-import "../App.css";
 
 const ParotFotter = () => {
 	return (
 		<div>
 			<Form>
-				<Row className="fotter-row mt-3">
-					<Col className={styles.footerCol1}>
-						<p>
-							<ul>
+				<Row className="fotter-row mt-1">
+					<div className="col-md-6">
+						<Col className={styles.footerCol1}>
+							<ul className={styles.fottertext}>
 								<li>10/25 Swami Nagar Lahore 54900.</li>
-								<li>Cell#: 03434810913</li>
+								<li>Cell# : 03434810913</li>
 								<li>What's App#: 03434810913</li>
 							</ul>
-						</p>
-					</Col>
-					<Col className={styles.footerCol2}>
-						<p>
+						</Col>
+					</div>
+					<div className="col-md-6">
+						<Col className={styles.footerCol2}>
 							<div>
 								<h6 className={styles.fottertext}>You can also follow us on...</h6>
-								<div>
-									<img className={styles.fotterimage} src={utube} />
-									<img className={styles.fotterimage} src={tweet} />
-									<img className={styles.fotterimage} src={insta} />
-									<img className={styles.fotterimage} src={whatsapp} />
-									<img className={styles.fotterimage} src={facebook} />
-								</div>
+								<img className={styles.fotterimage} src={utube} />
+								<img className={styles.fotterimage} src={tweet} />
+								<img className={styles.fotterimage} src={insta} />
+								<img className={styles.fotterimage} src={whatsapp} />
+								<img className={styles.fotterimage} src={facebook} />
 							</div>
-						</p>
-					</Col>
+						</Col>
+					</div>
 				</Row>
 			</Form>
 		</div>

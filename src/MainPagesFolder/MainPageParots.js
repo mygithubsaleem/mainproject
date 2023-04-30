@@ -31,9 +31,7 @@ function MainPageParots() {
 						</Col>
 					</Row>
 				</div>
-				<Row>
-					<p>{<ParotFotter />}</p>
-				</Row>
+				<Row>{<ParotFotter />}</Row>
 			</Form>
 		</div>
 	);

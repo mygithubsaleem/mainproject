@@ -4,6 +4,7 @@ import fruuitstyles from "./Fruits.module.css";
 import { Button, Form, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MainPageProject1 from "../MainPagesFolder/MainPageProject1";
+import { Data } from "@react-google-maps/api";
 
 const FbFruitObject = (props) => {
 	const [Fruits, setFruits] = useState([
@@ -122,20 +123,25 @@ const FbFruitObject = (props) => {
 				</div>
 				<br />
 
+				<div className={fruuitstyles.fruit_row_heading}>
+					<Row className={fruuitstyles.fruit_heading}>
+						<Col>Item No</Col>
+						<Col>Fruit</Col>
+						<Col>Quantity</Col>
+						<Col>Total Price</Col>
+					</Row>
+				</div>
 				<div>
 					{Fruits.map((data, index) => (
 						<div key={index}>
 							<Row>
-								<Col className="Col-5 mt-5 "></Col>
+								{/* <Col className="Col-5 mt-5 "></Col> */}
 
-								<Col className="Col-1 ">
+								<Col>
 									<span> {index + 1}</span>
 								</Col>
 								<Col>
 									<span> {data.name}</span>
-								</Col>
-								<Col>
-									<span> {data.price}</span>
 								</Col>
 								<Col>
 									{" "}
@@ -146,7 +152,7 @@ const FbFruitObject = (props) => {
 									<span> {data.price}</span>
 								</Col>
 
-								<Col className="Col-1 ">
+								<Col>
 									<Button
 										variant="info"
 										onClick={() => {
@@ -156,7 +162,7 @@ const FbFruitObject = (props) => {
 										Edit
 									</Button>
 								</Col>
-								<Col className="Col-1 ">
+								<Col>
 									<Button
 										variant="danger"
 										onClick={() => {
