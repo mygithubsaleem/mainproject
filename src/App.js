@@ -42,6 +42,7 @@ import MernLogin from "./MernApp/MernLogin";
 import MernErrorPage from "./MernApp/MernErrorPage";
 import MernSignup from "./MernApp/MernSignup";
 import MernContactus from "./MernApp/MernContacus";
+// import ParotRouter from "./ParotRouter";
 
 const App = (props) => {
 	return (
@@ -85,7 +86,9 @@ const App = (props) => {
 				<Route path="MernLogin" element={<MernLogin />} />
 				<Route path="MernSignup" element={<MernSignup />} />
 				<Route path="MernErrorpage" element={<MernErrorPage />} />
+				{/* <Route path="ParotRouter" element={<ParotRouter />} /> */}
 			</Routes>
+			{/* <CustomAlert  isVisible={isVisible}/> */}
 		</div>
 	);
 };

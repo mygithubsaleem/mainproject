@@ -55,3 +55,11 @@ a {
 .about_tabs {
 	background-color: bisque;
 }
+.tab_para {
+	background-color: bisque;
+	color: blue;
+	font-size:large;
+	width: 350px;
+	height: 100px;
+	text-align: left;
+}

@@ -31,41 +31,28 @@ const MernAboutus = () => {
 							<h3>RANKING:1/10</h3>
 							<Tabs className={style.about_tabs} defaultActiveKey="profile" id="emp-tab" justify>
 								<Tab className={style.about_tab} eventKey="home" title="About" justify="true">
-									<div>
-										<label>User Id:</label>
-										<label className={style.about_label}>73743483</label>
+									<p className={style.tab_para}>
+										Name: &nbsp;&nbsp;&nbsp;Muhammad Saleem
 										<br />
-										<label> Name:</label>
-										<label className={style.about_label}>Saleem</label>
+										Email: &nbsp;&nbsp;&nbsp;saleem65.teacher@gmail.com
 										<br />
-										<label> Email:</label>{" "}
-										<label className={style.about_label}>saleem65.teacher@gmail.com</label>
+										Phone: &nbsp;&nbsp;&nbsp; +923434810913
 										<br />
-										<label>Phone:</label> <label className={style.about_label}>+923434810913</label>
-										<br />
-										<label> Pfofession:</label>{" "}
-										<label className={style.about_label}>WebDeveloper</label>
-									</div>
+										Pfofession: &nbsp;&nbsp;&nbsp;WebDeveloper
+									</p>
 								</Tab>
 								<Tab className={style.about_tab} eventKey="profile" title="Time Line">
-									<div>
-										<div>
-											<label>Experinece:</label> <label className={style.about_label}>Expert</label>
-											<br />
-											<label> Hourly Rate:</label>{" "}
-											<label className={style.about_label}>80$/h</label>
-											<br />
-											<label> Total Projects:</label>{" "}
-											<label className={style.about_label}>Ten</label>
-											<br />
-											<label>English Level:</label>{" "}
-											<label className={style.about_label}>Expert</label>
-											<br />
-											<label> Availability:</label>{" "}
-											<label className={style.about_label}>3Months</label>
-										</div>
-										<div></div>
-									</div>
+									<p className={style.tab_para}>
+										Level: &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Expert
+										<br />
+										Hourly: &nbsp;&nbsp;&nbsp; &nbsp;80$/h
+										<br />
+										Projects: &#160;&#160;&#160;10
+										<br />
+										English: &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Expert
+										<br />
+										Availability: &nbsp;&nbsp;&nbsp;Open
+									</p>
 								</Tab>
 							</Tabs>
 						</Col>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from "./TickCross.css";
 
 const winnerArray = [
 	[0, 1, 2],
@@ -39,7 +38,7 @@ const FbTickTock = (props) => {
 	console.log(currentGameState);
 	return (
 		<div className="bodyColor">
-			<h1>Function Base Tick Cross Game</h1>
+			<h1>Function Base Tick Cross Game...</h1>
 			<div className="gameBoard">
 				<button
 					className="buttonSize"
